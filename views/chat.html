@@ -1,0 +1,102 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">   
+    <link rel="stylesheet" type="text/css" href="chat.css">
+    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />    
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" />
+ 
+    <!-- Latest compiled and minified JavaScript -->
+    <script defer src="https://code.jquery.com/jquery-3.5.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.3.1/socket.io.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script defer src="chat.js"></script>   
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js" />
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.js"></script>
+</head>
+
+<body>    
+<div class="container app">
+    <div class="row app-one">
+        <div class="col-sm-4 side">
+            <div class="side-one">
+                <div class="row heading">
+                <div class="col-sm-3 col-xs-3 heading-avatar">
+                    <div class="heading-avatar-icon">
+                    <img src="https://bootdey.com/img/Content/avatar/avatar1.png">
+                    </div>
+                </div>
+                <div class="col-sm-5">
+                    <p class="username-heading"></p>
+                </div>
+                <div class="col-sm-1 col-xs-1  heading-dot  pull-right">
+                    <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-2 col-xs-2 heading-compose  pull-right">
+                    <i class="fa fa-comments fa-2x  pull-right" aria-hidden="true"></i>
+                </div>
+                </div>
+
+                <div class="row searchBox">
+                <div class="col-sm-12 searchBox-inner">
+                    <div class="form-group has-feedback">
+                    <input id="searchText" type="text" class="form-control" name="searchText" placeholder="Search">
+                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                    </div>
+                </div>
+                </div>
+
+                <div class="row sideBar user_online_list">               
+                </div>
+            </div>        
+        </div>
+
+        <div class="col-sm-8 conversation">
+            <div class="row heading">
+                <div class="col-sm-2 col-md-1 col-xs-3 heading-avatar">
+                    <div class="heading-avatar-icon">
+                        <img src="https://bootdey.com/img/Content/avatar/avatar6.png">
+                    </div>
+                </div>
+                <div class="col-sm-8 col-xs-7 heading-name">
+                    <a class="heading-name-meta" id="current_user">Broadcast Chat</a>                    
+                    <!-- <span class="heading-online">Online</span> -->
+                    <span class="typing-message"></span>
+                </div>
+                <div class="col-sm-1 col-xs-1  heading-dot pull-right">
+                    <i class="fa fa-ellipsis-v fa-2x  pull-right" aria-hidden="true"></i>
+                </div>
+            </div>
+
+            <div class="row message" id="conversation">
+                <div class="row message-previous">
+                    <div class="col-sm-12 previous">
+                        <a onclick="previous(this)" id="ankitjain28" name="20">
+                        Show Previous Message!
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="msg-content-body"></div>
+            </div>
+
+            <div class="row reply">
+                <div class="col-sm-1 col-xs-1 reply-emojis">
+                    <i class="fa fa-smile-o fa-2x"></i>
+                </div>
+                <div class="col-sm-9 col-xs-9 reply-main">
+                    <textarea class="form-control reply-message" rows="1"></textarea>
+                </div>
+                <div class="col-sm-1 col-xs-1 reply-recording">
+                    <i class="fa fa-microphone fa-2x" aria-hidden="true"></i>
+                </div>
+                <div class="col-sm-1 col-xs-1 reply-send">
+                    <i class="fa fa-send fa-2x" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
